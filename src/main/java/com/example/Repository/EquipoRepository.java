@@ -1,7 +1,10 @@
 package com.example.Repository;
 
-/**
- * Created by jhipster on 15/10/15.
- */
-public interface EquipoRepository {
+
+import com.example.Model.Equipo;
+import org.springframework.data.repository.PagingAndSortingRepository;
+
+public interface EquipoRepository extends PagingAndSortingRepository<Equipo, Long>{
+
+
 }
