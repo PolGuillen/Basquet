@@ -41,8 +41,8 @@ public class JugadorService {
         Date nacimiento =c1.getTime();
         jugador1.setFechaNacimiento(nacimiento);
         jugador1.setCanastas(9);
-        jugador1.setAsistencias(26);
-        jugador1.setRebotes(13);
+        jugador1.setAsistencias(13);
+        jugador1.setRebotes(130);
         jugador1.setPosicion("Pivot");
         jugador1.setEquipo(equipo1);
         jugadorRepository.save(jugador1);
@@ -64,7 +64,7 @@ public class JugadorService {
          nacimiento =c1.getTime();
         jugador3.setFechaNacimiento(nacimiento);
         jugador3.setCanastas(0);
-        jugador3.setAsistencias(26);
+        jugador3.setAsistencias(10);
         jugador3.setRebotes(13);
         jugador3.setPosicion("Pivot");
         jugadorRepository.save(jugador3);
@@ -75,7 +75,7 @@ public class JugadorService {
          nacimiento =c1.getTime();
         jugador4.setFechaNacimiento(nacimiento);
         jugador4.setCanastas(0);
-        jugador4.setAsistencias(26);
+        jugador4.setAsistencias(55);
         jugador4.setRebotes(13);
         jugador4.setPosicion("Pivot");
         jugadorRepository.save(jugador4);
@@ -85,10 +85,11 @@ public class JugadorService {
         c1.set(1999, 06, 11);
         nacimiento =c1.getTime();
         jugador5.setFechaNacimiento(nacimiento);
-        jugador5.setCanastas(0);
+        jugador5.setCanastas(11);
         jugador5.setAsistencias(11);
         jugador5.setRebotes(13);
-        jugador5.setPosicion("Pivot");
+        jugador5.setPosicion("Alero");
+        jugador5.setEquipo(equipo1);
         jugadorRepository.save(jugador5);
 
 
@@ -108,8 +109,22 @@ public class JugadorService {
         Date findNacimiento =c1.getTime();
         System.out.println(jugadorRepository.findByFechaNacimientoBefore(findNacimiento));
         System.out.println(jugadorRepository.findByCanastasGreaterThanEqualAndFechaNacimientoBefore(22, findNacimiento));
+
+
+        System.out.println("jugador1" );
+        System.out.println("jugador2" );
+        System.out.println("jugador3" );
+        System.out.println("jugador4");
+        System.out.println("jugador5");
+        System.out.println(jugadorRepository.findFirstByOrderByCanastasDesc());
+        System.out.println("jugador1" );
+        System.out.println("jugador2" );
+        System.out.println("jugador3" );
+        System.out.println("jugador4" );
+        System.out.println("jugador5");
+        System.out.println(jugadorRepository.findFirst5ByOrderByAsistenciasDesc());
+
+
+
     }
-
-
-
 }

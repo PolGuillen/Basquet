@@ -21,6 +21,9 @@ public class Equipo {
     @OneToMany(mappedBy = "equipo")
     Set<Jugador> jugadors = new HashSet<>();
 
+    @ManyToMany(mappedBy = "equipo")
+    Set<Temporada> temporadas = new HashSet<>();
+
     public Equipo() {
     }
 
@@ -71,6 +74,14 @@ public class Equipo {
         this.nombre = nombre;
     }
 
+    public Set<Temporada> getTemporadas() {
+        return temporadas;
+    }
+
+    public void setTemporadas(Set<Temporada> temporadas) {
+        this.temporadas = temporadas;
+    }
+
     @Override
     public String toString() {
         return "Equipo{" +
@@ -79,6 +90,7 @@ public class Equipo {
                 ", localidad='" + localidad + '\'' +
                 ", fechaCreacion=" + fechaCreacion +
                 ", jugadors=" + jugadors +
+                ", temporadas=" + temporadas +
                 '}';
     }
 }
