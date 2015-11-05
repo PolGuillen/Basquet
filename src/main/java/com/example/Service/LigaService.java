@@ -26,7 +26,7 @@ public class LigaService {
 
         Temporada temporada1 = temporadaRepository.findById(2L);
 
-        liga1.setNombre("ABC");
+        liga1.setNombre("ACB");
         liga1.getTemporadas().add(temporada1);
         ligaRepository.save(liga1);
 

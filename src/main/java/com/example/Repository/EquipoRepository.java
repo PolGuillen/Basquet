@@ -11,6 +11,8 @@ import java.util.List;
 
 public interface EquipoRepository extends PagingAndSortingRepository<Equipo, Long>{
 
+
+    public Equipo findById(Long id);
     public List<Equipo> findByLocalidad(String nombre);
 
 

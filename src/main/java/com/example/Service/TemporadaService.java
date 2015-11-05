@@ -21,6 +21,9 @@ public class TemporadaService  {
     @Autowired
     private TemporadaRepository temporadaRepository;
 
+    @Autowired
+    private EquipoRepository equipoRepository;
+
     public void testTemporadas(){
         Calendar c1 = GregorianCalendar.getInstance();
         SimpleDateFormat date2 = new SimpleDateFormat("yyyy");
@@ -29,18 +32,13 @@ public class TemporadaService  {
         c1.set(2000, 01, 01);
         Date creacion =c1.getTime();
         temporada1.setYear(creacion);
-        temporadaRepository.save(temporada1);
 
+        temporadaRepository.save(temporada1);
 
         Temporada temporada2 = new Temporada();
         c1.set(2001, 01, 01);
         creacion =c1.getTime();
         temporada2.setYear(creacion);
         temporadaRepository.save(temporada2);
-
-
-
     }
-
-
 }

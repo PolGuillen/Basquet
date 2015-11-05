@@ -27,13 +27,8 @@ public class JugadorService {
 
     public void testJugador(){
 
-        Equipo equipo1 = new Equipo();
-        c1.set(2000, 12, 31);
-        Date creacion =c1.getTime();
-        equipo1.setNombre("Team123");
-        equipo1.setFechaCreacion(creacion);
-        equipo1.setLocalidad("Aqui");
-        equipoRepository.save(equipo1);
+       Equipo equipo1 = equipoRepository.findById(1L);
+       Equipo equipo2 = equipoRepository.findById(2L);
 
         Jugador jugador1 = new Jugador();
         jugador1.setNombre("Juan");
@@ -56,6 +51,7 @@ public class JugadorService {
         jugador2.setAsistencias(26);
         jugador2.setRebotes(13);
         jugador2.setPosicion("Pivot");
+        jugador1.setEquipo(equipo2);
         jugadorRepository.save(jugador2);
 
         Jugador jugador3 = new Jugador();
@@ -67,6 +63,7 @@ public class JugadorService {
         jugador3.setAsistencias(10);
         jugador3.setRebotes(13);
         jugador3.setPosicion("Pivot");
+        jugador1.setEquipo(equipo2);
         jugadorRepository.save(jugador3);
 
         Jugador jugador4 = new Jugador();
@@ -78,6 +75,7 @@ public class JugadorService {
         jugador4.setAsistencias(55);
         jugador4.setRebotes(13);
         jugador4.setPosicion("Pivot");
+        jugador1.setEquipo(equipo2);
         jugadorRepository.save(jugador4);
 
         Jugador jugador5 = new Jugador();
