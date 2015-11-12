@@ -18,7 +18,7 @@ import java.util.List;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 @RestController
 @RequestMapping("/Jugador")
-public class JugadorControler {
+public class JugadorController {
 
     @Autowired
     private JugadorRepository jugadorRepository;
@@ -37,9 +37,9 @@ public class JugadorControler {
         List<Jugador> jugador = new ArrayList<Jugador>();
         Iterator<Jugador> iterator = jugadorRepository.findAll().iterator();
 
-        while (iterator.hasNext() ){
+        while (iterator.hasNext() )
             jugador.add(iterator.next());
-        }
+
 
         return jugador;
     }
@@ -59,9 +59,9 @@ public class JugadorControler {
     public void deleteById(@PathVariable Long id){
         Jugador jugador = jugadorRepository.findOne(id);
 
-        if(jugador == null){
+        if(jugador == null)
             throw new JugadorException(id);
-        }
+
         jugadorRepository.delete(id);
     }
 
@@ -69,9 +69,9 @@ public class JugadorControler {
     public Jugador updateById(@PathVariable Long id, @RequestBody Jugador jugador){
         Jugador j1 = jugadorRepository.findOne(id);
 
-        if(j1 == null){
+        if(j1 == null)
             throw new JugadorException(id);
-        }
+
         return jugadorRepository.save(jugador);
     }
 }
