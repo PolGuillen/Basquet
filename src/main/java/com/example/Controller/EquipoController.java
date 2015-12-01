@@ -65,7 +65,7 @@ public class EquipoController {
         equipoRepository.delete(id);
     }
 
-    @RequestMapping(value = "/{idEquipo}/equipo/{idJugador}", method = POST)
+    @RequestMapping(value = "/{idEquipo}/jugador/{idJugador}", method = POST)
     @ResponseStatus(HttpStatus.CREATED)
     public Equipo addJugador(@PathVariable Long idEquipo, @RequestBody Equipo equipo) {
         if(equipoRepository.findOne(idEquipo) == null)

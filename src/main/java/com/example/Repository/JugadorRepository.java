@@ -27,7 +27,6 @@ public interface JugadorRepository extends PagingAndSortingRepository<Jugador, L
     @Query("SELECT j FROM Jugador j WHERE j.equipo.nombre = :nombre and j.posicion = :posicion")
     public List<Jugador> findByNombreAndPosicion(@Param("nombre") String nombre, @Param("posicion") String posicion);
 
-
     public List<Jugador> findFirstByOrderByCanastasDesc();
 
     public List<Jugador> findFirst5ByOrderByAsistenciasDesc();
